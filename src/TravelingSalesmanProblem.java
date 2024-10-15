@@ -32,10 +32,10 @@ public class TravelingSalesmanProblem {
 	/*
 	 * 2.7 Now, generate all of the permutation (You can do an exhaustive search to
 	 * find the shortest path. Note that paths in either direction and from any
-	 * starting point have the same length. So length(0-1-2-3-0) = length(0-3-2-1-0) =
-	 * length(1-2-3-0-1)). A good way to do this is to write a recursive function that
-	 * takes in an array of cities not visited, and a partial path. When there are
-	 * no cities left to visit, print out the (now complete) path.
+	 * starting point have the same length. So length(0-1-2-3-0) = length(0-3-2-1-0)
+	 * = length(1-2-3-0-1)). A good way to do this is to write a recursive function
+	 * that takes in an array of cities not visited, and a partial path. When there
+	 * are no cities left to visit, print out the (now complete) path.
 	 */
 	public static void allPremutations(int[][] cities, int[] idx, int currentElement, float[] shortPath) {
 		if (currentElement == idx.length) {
@@ -87,38 +87,38 @@ public class TravelingSalesmanProblem {
 		// 2.5 calculating the distance between city 1,4
 		float distance = calculateDistance(cities, 0, 3);
 		System.out.println("Distance between city 1 and city 4 is " + distance);
-		distance = calculateDistance(cities,0,1);
+		distance = calculateDistance(cities, 0, 1);
 		System.out.println("Distance between city 1 and city 2 is " + distance);
-		distance = calculateDistance(cities,0,2);
+		distance = calculateDistance(cities, 0, 2);
 		System.out.println("Distance between city 1 and city 3 is " + distance);
-		distance = calculateDistance(cities,1,0);
+		distance = calculateDistance(cities, 1, 0);
 		System.out.println("Distance between city 2 and city 1 is " + distance);
-		distance = calculateDistance(cities,1,2);
+		distance = calculateDistance(cities, 1, 2);
 		System.out.println("Distance between city 2 and city 3 is " + distance);
-		distance = calculateDistance(cities,1,3);
+		distance = calculateDistance(cities, 1, 3);
 		System.out.println("Distance between city 2 and city 4 is " + distance);
-		distance = calculateDistance(cities,2,0);
+		distance = calculateDistance(cities, 2, 0);
 		System.out.println("Distance between city 3 and city 1 is " + distance);
-		distance = calculateDistance(cities,2,1);
+		distance = calculateDistance(cities, 2, 1);
 		System.out.println("Distance between city 3 and city 2 is " + distance);
-		distance = calculateDistance(cities,2,3);
+		distance = calculateDistance(cities, 2, 3);
 		System.out.println("Distance between city 3 and city 4 is " + distance);
-		distance = calculateDistance(cities,3,1);
+		distance = calculateDistance(cities, 3, 1);
 		System.out.println("Distance between city 4 and city 1 is " + distance);
-		distance = calculateDistance(cities,3,1);
+		distance = calculateDistance(cities, 3, 1);
 		System.out.println("Distance between city 4 and city 2 is " + distance);
-		distance = calculateDistance(cities,3,2);
+		distance = calculateDistance(cities, 3, 2);
 		System.out.println("Distance between city 4 and city 3 is " + distance);
 		// 2.6 calculate the length of the path (0-1-2-3-0)
 		float path = totalLengthPath(cities, idx);
 		System.out.println("The calculated length of the path is " + path);
-		
+
 		// 2.8 Add a recording of the shortest current path to the permutation function.
-		float[] shortestPath = {Float.MAX_VALUE};
-		
-		//2.7 all permutations generated and calculated it's path 
+		float[] shortestPath = { Float.MAX_VALUE };
+
+		// 2.7 all permutations generated and calculated it's path
 		allPremutations(cities, idx, 0, shortestPath);
-		
+
 		System.out.println("The shortest path is: " + shortestPath[0]);
 	}
 }
